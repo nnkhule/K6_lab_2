@@ -2,12 +2,12 @@ import http from 'k6/http';
 import { sleep, check } from 'k6';
 
 export const options = {
-    stages: [
-        { duration: "30s", target: 5 },  //halaalt
-        { duration: "1m", target: 30 }, //usgult
-        { duration: "30s", target: 100 },//orgil
-        { duration: "30s", target: 0 },  //buuralalt
-    ]
+    vus: 30, duration: "1m",
+
+    thresholds: {
+    http_req_duration: ['p(95)<300'], // SLO: p95 < 300ms
+    http_req_failed: ['rate<0.01'], // SLO: error rate < 1%
+    },
 };
 
 export default function () {
