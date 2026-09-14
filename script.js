@@ -1,7 +1,14 @@
 import http from 'k6/http';
 import { sleep, check } from 'k6';
 
-export const options = { vus: 5, duration: "30s" };
+export const options = {
+    stages: [
+        { duration: "30s", target: 5 },  //halaalt
+        { duration: "1m", target: 30 }, //usgult
+        { duration: "30s", target: 100 },//orgil
+        { duration: "30s", target: 0 },  //buuralalt
+    ]
+};
 
 export default function () {
 
