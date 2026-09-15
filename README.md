@@ -71,6 +71,4 @@ thresholds: {
 
 FAIL тестийн үед k6 `ERRO[0062] thresholds on metrics 'http_req_duration' have been crossed` гэсэн алдаа заан non-zero exit code буцаасан бөгөөд энэ нь CI/CD pipeline дээр Quality Gate ажиллаж pipeline-ийг зогсоох зарчимтай нийцэж байна.
 
-
-
-
+Локал Express серверт (шууд хариу) болон /slow (100ms хиймэл саатал) endpoint-ийг 10 VU-тай 30 секундийн турш k6-аар харьцуулан тестлэв. /fast endpoint p95=2.35ms, харин /slow endpoint p95=116.21ms гарч, тохируулсан 100ms саатлаас ~16ms илүү үзүүлэв  энэ нь Node.js-ийн event loop болон HTTP давхаргын нэмэлт зардлыг (overhead) тусгасан гэж дүгнэж болно.
