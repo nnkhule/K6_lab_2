@@ -3,6 +3,20 @@
 # K6_lab_2
 Программ хангамжийн чанарын баталгаа ба тест лаборторийн ажил №2
 
+
+---
+
+## Орчин
+
+- OS: Windows
+- k6 version:
+```
+k6.exe v2.2.0 (commit/00a9a1b7f5, go1.26.5, windows/amd64)
+```
+- Тестийн зорилтот сервер (Алхам 2–4): `https://test.k6.io`
+- Локал сервер (Алхам 5): Express.js, `http://localhost:3000`
+  
+
 ## Load Testing Results Summary (k6)
 
 # Алхам 3
@@ -56,4 +70,7 @@ thresholds: {
 - `results/run-threshold-fail.txt`, `result/threshold fail.png`, `result/thresholdsfail.png`
 
 FAIL тестийн үед k6 `ERRO[0062] thresholds on metrics 'http_req_duration' have been crossed` гэсэн алдаа заан non-zero exit code буцаасан бөгөөд энэ нь CI/CD pipeline дээр Quality Gate ажиллаж pipeline-ийг зогсоох зарчимтай нийцэж байна.
+
+
+
 
